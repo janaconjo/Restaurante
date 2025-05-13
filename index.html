@@ -1,11 +1,410 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-MZ">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Restaurante </title>
+<link rel="stylesheet" href="index.css">
+<style>
+</style>
 </head>
 <body>
-    
+
+<header>
+  <nav>
+    <div class="logo">RESTA<span class="cor">URANTE</span> </div>
+    <ul>
+      <li><a href="#hero" class="active">Início</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Galeria</a></li>
+      <li><a href="#reservation">Reservas</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="hero" class="hero" aria-label="Seção de boas-vindas do restaurante">
+    <h1>Bem-vindo ao Restaurante </h1>
+    <p>Sabores inesquecíveis, ambiente acolhedor, e experiências únicas.</p>
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+  </section>
+
+  <section id="about" aria-label="Sobre o restaurante">
+    <h2>Sobre Nós</h2>
+    <div class="about">
+      <img src="img/chef-working-together-professional-kitchen.jpg" alt="Imagem interna do restaurante moderno" />
+      <p>Fundado em 2022, o nosso restaurante combina ingredientes frescos e técnicas inovadoras para criar pratos que agradam todos os sentidos. A nossa paixão é oferecer uma experiência gastronómica moderna e acolhedora para toda a família.</p>
+    </div>
+  </section>
+
+  <section id="menu" aria-label="Cardápio do restaurante">
+    <h2>Menu Destaque</h2>
+    <div class="menu-search">
+      <input type="search" id="menuSearch" placeholder="Pesquisar no cardápio..." aria-label="Pesquisar no cardápio" />
+    </div>
+    <div class="menu-grid" role="list" id="menuGrid">
+      <article class="menu-item" role="listitem" tabindex="0" aria-label="Risoto de cogumelos por MZN 39,90">
+        <img src="img/baked-appetizing-whole-chicken-with-oranges-cranberries-oven-form-closeup.jpg" alt="frango" />
+        <h3>Frango assado</h3>
+        <p>Frango assado feito com cogumelos frescos e parmesão ralado na hora.</p>
+        <div class="price">MZN 850,00</div>
+      </article>
+      <article class="menu-item" role="listitem" tabindex="0" aria-label="Filé mignon grelhado por MZN 48,90">
+        <img src="img/black-beans-rice-dish_434193-5480.avif" alt="arroz" />
+        <h3>Arroz com feijão</h3>
+        <p>Arroz com feijão acompanhado de legumes grelhados e molho especial.</p>
+        <div class="price">MZN 670,00</div>
+      </article>
+      <article class="menu-item" role="listitem" tabindex="0" aria-label="Salada mediterrânea por MZN 28,90">
+        <img src="img/comida-lifestyle-spaghetti-foodie-gastronomy.jpg" alt="massa" />
+        <h3>Massa com molho de tomate</h3>
+        <p>Massa com molho de tomate, queijo feta e molho de limão siciliano.</p>
+        <div class="price">MZN 460,00</div>
+      </article>
+      <article class="menu-item" role="listitem" tabindex="0" aria-label="Tiramisu clássico por MZN 18,90">
+        <img src="img/top-view-two-italian-pizzas-served-wooden-background-flour-sprinkles.jpg" alt="Tiramisu " />
+        <h3>Pizza italiana </h3>
+        <p>Pizza italiana com ,queijo,molho de tomate e atum.</p>
+        <div class="price">MZN 550,00</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" aria-label="Galeria de fotos do restaurante">
+    <h2>Galeria</h2>
+    <div class="slideshow-container" aria-live="polite" aria-label="Apresentação de fotos do restaurante">
+      <img class="slides" src="img/restaurant-interior.jpg" alt="" tabindex="0" />
+      <img class="slides" src="img/young-african-american-waiter-man-hold-tray-with-burger-bar-restaurant.jpg" alt="" tabindex="0" />
+      <img class="slides" src="img/front-view-friends-enjoying-dinner-party.jpg" alt="" tabindex="0" />
+     <img class="slides" src="img/medium-shot-smiley-man-with-food-bistro.jpg" alt="" tabindex="0" />
+ 
+ 
+
+      <button class="slideshow-arrow prev" aria-label="Imagem anterior" tabindex="0">&#10094;</button>
+      <button class="slideshow-arrow next" aria-label="Próxima imagem" tabindex="0">&#10095;</button>
+
+      <div class="dot-container" role="tablist" aria-label="Controlo dos slides">
+        <span class="dot" role="tab" aria-selected="true" tabindex="0" aria-controls="slide1"></span>
+        <span class="dot" role="tab" aria-selected="false" tabindex="0" aria-controls="slide2"></span>
+        <span class="dot" role="tab" aria-selected="false" tabindex="0" aria-controls="slide3"></span>
+        <span class="dot" role="tab" aria-selected="false" tabindex="0" aria-controls="slide4"></span>
+        <span class="dot" role="tab" aria-selected="false" tabindex="0" aria-controls="slide5"></span>
+        <span class="dot" role="tab" aria-selected="false" tabindex="0" aria-controls="slide6"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservation" aria-label="Formulário para fazer reservas">
+    <h2>Faça a Sua Reserva</h2>
+    <form class="reservation-form" id="reservationForm" novalidate>
+      <label for="name">Nome completo</label>
+      <input type="text" id="name" name="name" placeholder="Seu nome" required minlength="3" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+
+      <label for="phone">Número de Telefone</label>
+      <input type="tel" id="phone" name="phone" placeholder="(99) 99999-9999" required pattern="^\(?\d{2}\)?[\s-]?\d{4,5}[-]?\d{4}$" />
+
+      <label for="date">Data</label>
+      <input type="date" id="date" name="date" required min="" />
+
+      <label for="time">Hora</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="people">Número de Pessoas</label>
+      <select id="people" name="people" required>
+        <option value="" disabled selected>Selecione</option>
+        <option value="1">1 pessoa</option>
+        <option value="2">2 pessoas</option>
+        <option value="3">3 pessoas</option>
+        <option value="4">4 pessoas</option>
+        <option value="5">5 pessoas</option>
+        <option value="6">6 ou mais</option>
+      </select>
+
+      <button type="submit" aria-label="Enviar formulário de reserva">Reservar</button>
+      <div class="confirmation-message" role="alert" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section id="contact" aria-label="Informações de contacto">
+    <h2>Contacto</h2>
+    <div class="contact-info">
+      <p><strong>Endereço:</strong> Av. Samora Machel, Cidade do Matola</p>
+      <p><strong>Telefone:</strong> (+258) 879130376</p>
+      <p><strong>Email:</strong> restaurante@gmail.com.mz</p>
+     <div class="social-icons" aria-label="Redes sociais">
+  <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/879130376" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 Restaurante Moderno. Todos os direitos reservados.
+</footer>
+
+<!-- Chatbot Widget -->
+<div id="chatbot" class="minimized" aria-label="Chatbot de atendimento ao cliente" role="region" aria-live="polite">
+  <div id="chatbot-header" role="button" tabindex="0" aria-expanded="false" aria-controls="chatbot-content">
+    Chatbot
+    <span id="chatbot-toggle-symbol">+</span>
+  </div>
+  <div id="chatbot-content" hidden>
+    <div id="chatbot-messages" aria-live="polite" aria-atomic="false" tabindex="0" role="log"></div>
+    <div id="chatbot-input-container">
+      <input type="text" id="chatbot-input" aria-label="Digite sua mensagem aqui" placeholder="Digite a sua mensagem..." autocomplete="off" />
+      <button id="chatbot-send-btn" aria-label="Enviar mensagem">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Update min date for reservation date input
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+
+  // Menu search filtering - now correctly filters menu items on input
+  const menuSearchInput = document.getElementById('menuSearch');
+  const menuGrid = document.getElementById('menuGrid');
+  const menuItems = Array.from(menuGrid.querySelectorAll('.menu-item'));
+
+  menuSearchInput.addEventListener('input', () => {
+    const query = menuSearchInput.value.toLowerCase().trim();
+
+    menuItems.forEach(item => {
+      const title = item.querySelector('h3').textContent.toLowerCase();
+      const desc = item.querySelector('p').textContent.toLowerCase();
+      if(title.includes(query) || desc.includes(query)){
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+
+  // Slideshow
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slides');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  const dots = document.querySelectorAll('.dot');
+  let autoSlideInterval;
+
+  function showSlide(index) {
+    if(index >= slides.length) { slideIndex = 0; }
+    else if(index < 0) { slideIndex = slides.length - 1; }
+    else { slideIndex = index; }
+
+    slides.forEach((slide, i) => {
+      slide.style.display = (i === slideIndex) ? 'block' : 'none';
+      dots[i].classList.toggle('active', i === slideIndex);
+      dots[i].setAttribute('aria-selected', i === slideIndex ? 'true' : 'false');
+    });
+  }
+
+  function nextSlideAuto() {
+    slideIndex++;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    showSlide(slideIndex);
+  }
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(nextSlideAuto, 4000);
+  }
+
+  showSlide(slideIndex);
+  resetAutoSlide();
+
+  prevBtn.addEventListener('click', () => {
+    showSlide(slideIndex - 1);
+    resetAutoSlide();
+  });
+  nextBtn.addEventListener('click', () => {
+    showSlide(slideIndex + 1);
+    resetAutoSlide();
+  });
+
+  // Keyboard accessibility for arrows
+  prevBtn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      showSlide(slideIndex - 1);
+      resetAutoSlide();
+    }
+  });
+  nextBtn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      showSlide(slideIndex + 1);
+      resetAutoSlide();
+    }
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      showSlide(i);
+      resetAutoSlide();
+    });
+    dot.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showSlide(i);
+        resetAutoSlide();
+      }
+    });
+  });
+
+  // Reservation form submission handling & validation
+  const form = document.getElementById('reservationForm');
+  const confirmationMessage = form.querySelector('.confirmation-message');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    if(!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const name = form.name.value.trim();
+
+    if(name.length < 3) {
+      alert('Por favor, informe um nome válido com pelo menos 3 caracteres.');
+      return;
+    }
+
+    confirmationMessage.textContent = 'A sua reserva foi enviada com sucesso! Entraremos em contacto consigo.';
+    confirmationMessage.style.display = 'block';
+
+    form.reset();
+
+    setTimeout(() => {
+      confirmationMessage.style.display = 'none';
+    }, 6000);
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('nav ul li a').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      const target = document.querySelector(link.getAttribute('href'));
+      if(target) {
+        target.scrollIntoView({behavior: 'smooth'});
+      }
+    });
+  });
+
+  // Chatbot functionality
+  const chatbot = document.getElementById('chatbot');
+  const chatbotHeader = document.getElementById('chatbot-header');
+  const chatbotToggleSymbol = document.getElementById('chatbot-toggle-symbol');
+  const chatbotContent = document.getElementById('chatbot-content');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+  const chatbotInput = document.getElementById('chatbot-input');
+  const chatbotSendBtn = document.getElementById('chatbot-send-btn');
+
+  chatbotHeader.addEventListener('click', toggleChatbot);
+  chatbotHeader.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleChatbot();
+    }
+  });
+
+  function toggleChatbot() {
+    const expanded = chatbot.getAttribute('aria-expanded') === 'true';
+    if(expanded) {
+      chatbot.classList.add('minimized');
+      chatbot.setAttribute('aria-expanded', 'false');
+      chatbotContent.hidden = true;
+      chatbotToggleSymbol.textContent = '+';
+    } else {
+      chatbot.classList.remove('minimized');
+      chatbot.setAttribute('aria-expanded', 'true');
+      chatbotContent.hidden = false;
+      chatbotToggleSymbol.textContent = '−';
+      chatbotInput.focus();
+    }
+  }
+
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('chatbot-message');
+    messageDiv.classList.add(sender === 'user' ? 'chatbot-user' : 'chatbot-bot');
+    messageDiv.textContent = text;
+    chatbotMessages.appendChild(messageDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  // Simple bot responses in Portuguese Mozambique style
+  const botResponses = {
+    'olá': 'Olá! Como posso ajudar-lo hoje?',
+    'hora': 'Estamos abertos das 10h00 às 22h00 todos os dias.',
+    'menu': 'Temos uma variedade deliciosa no nosso menu, incluindo pratos tradicionais e novidades modernas.',
+    'reserva': 'Podes fazer a tua reserva usando o formulário na secção "Faça a Sua Reserva". Posso ajudar com algo mais?',
+    'contacto': 'Podes contactar-nos pelo telefone (+258) 82 123 4567 ou pelo email contacto@restaurante.com.mz.',
+    'adeus': 'Obrigado pela sua visita! Esperamos vê-lo em breve.',
+    default: 'Desculpe, não entendi. Por favor digite outra pergunta ou use o formulário de reservas.'
+  };
+
+  function getBotResponse(input) {
+    input = input.toLowerCase();
+    for (const key in botResponses) {
+      if (key !== 'default' && input.includes(key)) {
+        return botResponses[key];
+      }
+    }
+    return botResponses.default;
+  }
+
+  chatbotSendBtn.addEventListener('click', sendMessage);
+  chatbotInput.addEventListener('keydown', e => {
+    if(e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+
+  function sendMessage() {
+    const userInput = chatbotInput.value.trim();
+    if(!userInput) return;
+
+    addMessage(userInput, 'user');
+    chatbotInput.value = '';
+    setTimeout(() => {
+      const botReply = getBotResponse(userInput);
+      addMessage(botReply, 'bot');
+    }, 600);
+  }
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('show');
+  }
+
+  // Open chatbot minimized by default
+  toggleChatbot();
+
+</script>
+
 </body>
 </html>
+
