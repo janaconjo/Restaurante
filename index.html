@@ -160,28 +160,14 @@
   &copy; 2024 Restaurante Moderno. Todos os direitos reservados.
 </footer>
 
-<!-- Chatbot Widget -->
-<div id="chatbot" class="minimized" aria-label="Chatbot de atendimento ao cliente" role="region" aria-live="polite">
-  <div id="chatbot-header" role="button" tabindex="0" aria-expanded="false" aria-controls="chatbot-content">
-    Chatbot
-    <span id="chatbot-toggle-symbol">+</span>
-  </div>
-  <div id="chatbot-content" hidden>
-    <div id="chatbot-messages" aria-live="polite" aria-atomic="false" tabindex="0" role="log"></div>
-    <div id="chatbot-input-container">
-      <input type="text" id="chatbot-input" aria-label="Digite sua mensagem aqui" placeholder="Digite a sua mensagem..." autocomplete="off" />
-      <button id="chatbot-send-btn" aria-label="Enviar mensagem">Enviar</button>
-    </div>
-  </div>
-</div>
 
 <script>
-  // Update min date for reservation date input
+
   const dateInput = document.getElementById('date');
   const today = new Date().toISOString().split('T')[0];
   dateInput.setAttribute('min', today);
 
-  // Menu search filtering - now correctly filters menu items on input
+
   const menuSearchInput = document.getElementById('menuSearch');
   const menuGrid = document.getElementById('menuGrid');
   const menuItems = Array.from(menuGrid.querySelectorAll('.menu-item'));
@@ -200,7 +186,7 @@
     });
   });
 
-  // Slideshow
+
   let slideIndex = 0;
   const slides = document.querySelectorAll('.slides');
   const prevBtn = document.querySelector('.prev');
@@ -242,7 +228,7 @@
     resetAutoSlide();
   });
 
-  // Keyboard accessibility for arrows
+
   prevBtn.addEventListener('keydown', e => {
     if(e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -272,7 +258,7 @@
     });
   });
 
-  // Reservation form submission handling & validation
+
   const form = document.getElementById('reservationForm');
   const confirmationMessage = form.querySelector('.confirmation-message');
 
@@ -301,7 +287,7 @@
     }, 6000);
   });
 
-  // Smooth scroll for nav links
+ 
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -314,14 +300,7 @@
     });
   });
 
-  // Chatbot functionality
-  const chatbot = document.getElementById('chatbot');
-  const chatbotHeader = document.getElementById('chatbot-header');
-  const chatbotToggleSymbol = document.getElementById('chatbot-toggle-symbol');
-  const chatbotContent = document.getElementById('chatbot-content');
-  const chatbotMessages = document.getElementById('chatbot-messages');
-  const chatbotInput = document.getElementById('chatbot-input');
-  const chatbotSendBtn = document.getElementById('chatbot-send-btn');
+
 
   chatbotHeader.addEventListener('click', toggleChatbot);
   chatbotHeader.addEventListener('keydown', e => {
@@ -347,25 +326,9 @@
     }
   }
 
-  function addMessage(text, sender) {
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('chatbot-message');
-    messageDiv.classList.add(sender === 'user' ? 'chatbot-user' : 'chatbot-bot');
-    messageDiv.textContent = text;
-    chatbotMessages.appendChild(messageDiv);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-  }
+  
 
-  // Simple bot responses in Portuguese Mozambique style
-  const botResponses = {
-    'olá': 'Olá! Como posso ajudar-lo hoje?',
-    'hora': 'Estamos abertos das 10h00 às 22h00 todos os dias.',
-    'menu': 'Temos uma variedade deliciosa no nosso menu, incluindo pratos tradicionais e novidades modernas.',
-    'reserva': 'Podes fazer a tua reserva usando o formulário na secção "Faça a Sua Reserva". Posso ajudar com algo mais?',
-    'contacto': 'Podes contactar-nos pelo telefone (+258) 82 123 4567 ou pelo email contacto@restaurante.com.mz.',
-    'adeus': 'Obrigado pela sua visita! Esperamos vê-lo em breve.',
-    default: 'Desculpe, não entendi. Por favor digite outra pergunta ou use o formulário de reservas.'
-  };
+
 
   function getBotResponse(input) {
     input = input.toLowerCase();
